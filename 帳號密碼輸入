@@ -1,0 +1,22 @@
+package cod;
+import java.util.*;
+public class aa {
+
+	public static void main(String[] args) {
+		Scanner sca =new Scanner(System.in);
+		String id,pass;
+		System.out.print("請輸入帳號:");
+		id=sca.next();
+		System.out.print("請輸入密碼:");
+		pass=sca.next();
+		if(id.equals("love") & pass.equals("2520")) {
+			System.out.println("正確");
+			System.out.println("歡迎");
+		}else{
+			System.out.print("錯誤");
+			System.out.print("無法進去");
+		}
+		sca.close();
+	}
+
+}
