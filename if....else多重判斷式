@@ -1,0 +1,23 @@
+import java.util.*;
+public class aa {
+
+	public static void main(String[] args) {
+		Scanner sca =new Scanner(System.in);
+		System.out.print("輸入用水度數:");
+		int deg =sca.nextInt();               //取得水度數
+		double unit;                          //每度單價
+		if(deg<=10) {                         //度數小於等於10度
+			unit=7.35;                               //每度7.35元
+		}else if(deg >10 && deg<=30) {        //若介於11-30度
+			unit=9.45;                               //每度9.45元
+		}else if(deg >30 && deg <=50) {       //若介於30-50度
+			unit=11.55;                             //每度11.55元
+		}else {                               //及大於50度
+			unit=12.075;                            //每度12.075元
+		}
+		System.out.printf("每度:%6.3f 元%n",unit);   
+		System.out.printf("實付水費:%d元",(int)(deg*unit));
+		sca.close();
+	}	
+		
+}
