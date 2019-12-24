@@ -1,0 +1,27 @@
+
+import java.util.*;
+public class aa {
+
+	public static void main(String[] args) {
+		Scanner sca =new Scanner(System.in);
+		System.out.print("請輸入三個數字:");
+		int unm1,unm2,unm3,max;               // 8~11使用者輸入三個數字分別存入unm1.2.3整數變數
+		unm1=sca.nextInt();                   
+		unm2=sca.nextInt();
+		unm3=sca.nextInt();
+		if(unm1>unm2) {    //12~-22為if巢壯式結構，外層if結構先判斷unm1是否大於unm2，如果是執行13~16行，再接著跳至23行，若不是，執行18~21，接著跳至23行
+			if(unm1 >unm3)      //13~16為內層if結構，使用if判斷unm1和unm3哪個大?，若是執行14行將unm1置入max變數，在跳至23行，若不是則執行第16行，跳至23行
+				max=unm1;         //18~21為內層if結構，判斷if結構unm2和unm3哪個大，若是執行第19行在跳至23行，若不是執行21行在跳至23行
+			else                //23行顯示最大數字max變數值
+				max=unm3;
+		}else {
+		if(unm2>unm3) 
+			max=unm2;
+		else
+			max=unm3;
+		}
+		System.out.print("最大數字:"+max);
+		sca.close();
+	}	
+		
+}
