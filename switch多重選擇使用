@@ -1,0 +1,23 @@
+import java.util.*;
+public class aa {
+    public static void main(String[] args) {
+    	Scanner sca =new Scanner(System.in);
+    	char grade;
+    	System.out.print("考試分數:");
+    	int score = sca.nextInt();
+    	switch (score / 10) {         
+    	case 10:                    //以下屬於甲級分數，8~19行利用switch選擇敘述，根據(score/10)運算式的值，決定執行哪個case敘述區段
+    	case 9:                     //第8行將score除10，便縮小case值的範圍，因為score除10的資料型別為double，系統會自動轉型int
+    	case 8:                     
+    		grade  = '甲';break;         
+    	case 7:                    //屬於乙級分數
+    		grade = '乙';break;
+    	case 6:                    //屬於丙級分數
+    		grade = '丙';break;
+    	default:                   //屬於丁級分數
+    		grade='丁';break;        //第17行default是所有case都不成立時，grade設成丁
+    	}
+    	System.out.print(score+"級分"+grade+"成績:");
+    	sca.close();
+    }     
+}
