@@ -1,0 +1,61 @@
+public class a1234 {
+	public static void main(String[] args) {
+		String str1 = "the light";       
+    String str2 = new String(str1);        //==用於判斷是否是同一個字串物件 
+    System.out.println( str1  ==  str2);   //輸出 false ， str1和str2的內容一樣，但不是同個物件。
+    
+    String str1 = "the light";
+    String str3 = "the light";
+    System.out.println( str1  ==  str3);   //輸出 true
+    -------------------------------------------
+    //使用equals進行字串內容的比較，必須大小寫一致 
+    //equalsIgnoreCase，忽略大小寫判斷內容是否一致
+    String str1 = "the light";      
+    String str2 = new String(str1);    
+    String str3 = str1.toUpperCase();                 //轉成大寫
+ 
+    System.out.println( str1  ==  str2);              //==用於判斷是否是同一個字串物件
+    System.out.println(str1.equals(str2));            //完全一樣返回true        
+    System.out.println(str1.equals(str3));            //大小寫不一樣，返回false
+    System.out.println(str1.equalsIgnoreCase(str3));  //忽略大小寫的比較，返回true
+    -------------------------------------------
+    // intern作用：當呼叫 intern 方法時，如果池已經包含一個等於此 String 物件的字串（該物件由 equals(Object) 方法確定）
+    // 則返回池中的字串。否則，將此 String 物件新增到池中，並且返回此 String 物件的引用。
+    String str1 = "a";
+    String str2 = "b";
+    String str3 = "ab";
+    String str4 = str1 + str2;
+    String str5 = new String("ab");
+ 
+    System.out.println(str5.equals(str3));          //T
+    System.out.println(str5 == str3);               //F
+    System.out.println(str5.intern() == str3);      //T
+    System.out.println(str5.intern() == str4);      //F
+    ------------------------------------------------
+    String a = new String("ab");
+    String b = new String("ab");
+    String c = "ab";
+    String d = "a" + "b";
+    String e = "b";
+    String f = "a" + e;
+
+    System.out.println(b.intern() == a);          //F
+    System.out.println(b.intern() == c);          //T
+    System.out.println(b.intern() == d);          //T
+    System.out.println(b.intern() == f);          //F
+    System.out.println(b.intern() == a.intern()); //T
+    --------------------------------------------------
+    String a = "abc";
+    String b = "abc";
+    String c = "a" + "b" + "c";
+    String d = "a" + "bc";
+    String e = "ab" + "c";
+     //全部顯示"abc"   
+    System.out.println(a == b);         //T
+    System.out.println(a == c);         //T
+    System.out.println(a == d);         //T
+    System.out.println(a == e);         //T
+    System.out.println(c == d);         //T
+    System.out.println(c == e);         //T
+	}
+}
