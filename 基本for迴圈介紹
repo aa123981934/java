@@ -1,0 +1,12 @@
+
+public class aa {
+    public static void main(String[] args) {
+    	int i;                  //4~5行宣告兩個整數變數，i用來當作迴圈控制變數，而sum是為了儲存累加的總和，初始值設為0，i,sum為for類別的成員變數                     
+    	int sum=0;
+    	for(i=1;i<=10;i++) {   //6~8為for迴圈，將i初始值設為1，再判斷條件是i<=10，符合就做第7行，不符合就離開迴圈執行第9行
+    		sum +=i;             //第7行sum+i後指定給sum，回到第6行，先執行i++在檢查i<=10，若為true執行第7行，再回到第6行在執行i++在檢查i<=10
+    	}                      //當i=11時則i<=10結果為false，就離開for迴圈然後執行第9行
+    	System.out.println("最後I值:"+i);
+    	System.out.println("1加到10的總和:"+sum);
+    }     
+}
